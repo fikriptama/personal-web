@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% for message in messages %}
+<h5 class="alert alert-warning p-1rem">{{ message }}</h5>
+
+    {% endfor %}
+    <form action="login" method="POST">
+        {% csrf_token %}
+        <div class='mb-3'>
+
+            <label for="exampleFormControlInput1" class='form-label'>Email Address</label>
+            <input type="text" name="email" placeholder="Masukan email" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="col-auto">
+            <label for="inputPassword2" class="visually-hidden">Password</label>
+            <input type="password" name="password" class="form-control" id="inputPassword2" placeholder="Masukan Password">   
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3 mt-3">Login</button>
+        </div>
+    </formm>
+    
+
+{% endblock %}
+
+
